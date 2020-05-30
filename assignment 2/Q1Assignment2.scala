@@ -6,7 +6,11 @@ object Q1Assignment2{
 	def takeHomesalary(h1:Int,h2:Int)=totalIncome(h1,h2)-tax(totalIncome(h1,h2))
 
 	def main(args:Array[String]):Unit = {
-	println("\tnormal working hours: 40\n\tOT hours: 20")
-	println("\nThe take home salary of an employee per week: "+takeHomesalary(40,20))
+	println("Calculating The take home salary of an employee per week\n\n")
+	println("Enter the normal working hours: ")
+	var n = scala.io.StdIn.readInt();	
+	println("Enter the OT hours: ")
+	var m = scala.io.StdIn.readInt();
+	println("\nThe take home salary of employee per week: "+takeHomesalary(n,m))
 	}
 }
