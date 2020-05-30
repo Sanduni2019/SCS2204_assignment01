@@ -17,8 +17,11 @@ object Q6Assignment3{
 	}
 	
 	def main(args:Array[String]):Unit = {
-	println("First 10 fibonacci numbers are : \n")
-	fibonacciSeq(10)
+	println("Checking fibonacci numbers")
+	println("Enter the number of finacci numbers needed : ")
+	var n = scala.io.StdIn.readInt();	
+	println("Fibonacci numbers are : \n")
+	fibonacciSeq(n)
 	}
 	
 }

@@ -8,7 +8,10 @@ object Q3Assignment3{
 	}
 
 	def main(args:Array[String]):Unit = {
-	println("Addition of numbers from 1 to 5: "+addNum(5))
+	println("Checking for Addition of numbers of all numbers up to a number")
+	println("Enter the number : ")
+	var n = scala.io.StdIn.readInt();
+	println("Addition of numbers : "+addNum(n))
 	}
 	
 	

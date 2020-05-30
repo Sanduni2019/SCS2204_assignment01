@@ -29,7 +29,9 @@ object Q2Assignment3{
 	}
 	
 	def main(args:Array[String]):Unit = {
-	println("All prime numbers less than 10 are : \n")
-	primeSeq(10)
+	println("Checking for All prime numbers less than a number")
+	println("Enter the number : ")
+	var n = scala.io.StdIn.readInt();
+	primeSeq(n)
 	}
 }

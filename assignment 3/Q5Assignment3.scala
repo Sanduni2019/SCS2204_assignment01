@@ -10,9 +10,10 @@ object Q5Assignment3{
 	}
 	
 	def main(args:Array[String]):Unit = {
-	println("Addition of all even numbers less than 10: "+addEven(10))
-	println("Addition of all even numbers less than 9: "+addEven(9))
-	println("Addition of all even numbers less than 8: "+addEven(8))
+	println("Checking Addition of all even numbers less than a number")
+	println("Enter the number : ")
+	var n = scala.io.StdIn.readInt();
+	println("Addition of all even numbers less than it: "+addEven(n))
 	}
 	
 }

@@ -13,8 +13,9 @@ object Q1Assignment3{
 	}
 	
 	def main(args:Array[String]):Unit = {
-		println("Is 2 an prime number: "+isPrime(2))
-		println("Is 5 an prime number: "+isPrime(5))
-		println("Is 8 an prime number: "+isPrime(8))
+		println("Checking for prime number or not")
+		println("Enter the number : ")
+		var n = scala.io.StdIn.readInt();
+		println("Is it a prime number: " +isPrime(n))
 	}
 }

@@ -8,8 +8,16 @@ object Q4Assignment3{
 	def isOdd(n:Int):Boolean= !(isEven(n))
 	
 	def main(args:Array[String]):Unit = {
-	println("Is 5 is an even number: "+isEven(5))
-	println("Is 5 is an odd number: "+isOdd(5))
+
+	println("Checking a number is odd")
+	println("Enter the number : ")
+	var n = scala.io.StdIn.readInt();
+	println("Is it is an odd number: "+isOdd(n))
+	println("Checking a number is even")
+	println("Enter the number : ")
+	var m = scala.io.StdIn.readInt();
+	println("Is it is an even number: "+isEven(m))
+	
 	}
 	
 }
