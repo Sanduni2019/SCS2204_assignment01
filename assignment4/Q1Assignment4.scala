@@ -4,7 +4,7 @@ object Q1Assignment4{
 	
 		println("The Caesar cipher technique")
 		
-		val alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+		val alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 		
 		var s = scala.io.StdIn.readLine("Enter the text : ")
 		
@@ -12,8 +12,8 @@ object Q1Assignment4{
 		var k = scala.io.StdIn.readInt()
 		
 		
-		val Encryption = (c:Char,key:Int,a:String)=> if(c==' ') ' ' else a((a.indexOf(c)+key)%(a.size))
-		val Decryption = (c:Char,key:Int,a:String)=> if(c==' ') ' ' else a((a.indexOf(c)-key)%(a.size))
+		val Encryption = (c:Char,key:Int,a:String)=> if(c==' ') ' ' else a((a.indexOf(c.toUpper)+key)%(a.size))
+		val Decryption = (c:Char,key:Int,a:String)=> if(c==' ') ' ' else a((a.indexOf(c.toUpper)-key)%(a.size))
 		
 		val caesarCipher=(algo:(Char,Int,String)=> Char,s:String,key:Int,a:String)=>s.map(algo(_,key,a))
 
@@ -27,4 +27,4 @@ object Q1Assignment4{
 	}
 }
 
-// code alphabet enhanced to Capital and simple letters and the spaces are identified and maintained in the space in enccrypted and decrypted texts.
+// code alphabet concentrated to Capital letters and the spaces are identified and maintained in the space in enccrypted and decrypted texts.
