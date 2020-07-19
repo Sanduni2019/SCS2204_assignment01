@@ -12,8 +12,8 @@ object Q1Assignment4{
 		var k = scala.io.StdIn.readInt()
 		
 		
-		val Encryption = (c:Char,key:Int,a:String)=>a((a.indexOf(c)+key)%a.size)
-		val Decryption = (c:Char,key:Int,a:String)=>a((a.indexOf(c)-key)%a.size)
+		val Encryption = (c:Char,key:Int,a:String)=> if(c==' ') ' ' else a((a.indexOf(c)+key)%(a.size))
+		val Decryption = (c:Char,key:Int,a:String)=> if(c==' ') ' ' else a((a.indexOf(c)-key)%(a.size))
 		
 		val caesarCipher=(algo:(Char,Int,String)=> Char,s:String,key:Int,a:String)=>s.map(algo(_,key,a))
 
@@ -23,5 +23,8 @@ object Q1Assignment4{
 		val decryptedText = caesarCipher(Decryption,encryptedText,k,alphabet)
 		println("Decrypted Text : "+decryptedText)
 
+
 	}
 }
+
+// code alphabet enhanced to Capital and simple letters and the spaces are identified and maintained in the space in enccrypted and decrypted texts.
