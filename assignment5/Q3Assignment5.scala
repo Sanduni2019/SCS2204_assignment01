@@ -1,7 +1,7 @@
 object Q3Assignment5 extends App{
 
-	val myAcc = new account(976540808V , 1001 ,2500.50)
-	val acc = new account(915478956V, 1002 , 1500.50)
+	val myAcc = new Account("972540808V" , 1001 ,3000.50)
+	val acc = new Account("915478956V", 1002 , 1200.00)
 	
 	println("Your Account Number Details: ")
 	println(myAcc)
@@ -9,34 +9,38 @@ object Q3Assignment5 extends App{
 	println("Receiver's Account Number Details: ")
 	println(acc)
 	
-	println("\nEnter ammount to Transfer: ")
-	var recAmount = scala.io.StdIn.readInt()
+	myAcc.transfer(acc,500)
 	
-	transfer(recAmount)
-	
-	println("Updated Your Account Number Details: ")
+	println("Updated Account Details : \n")
+	println("Your Account Number Details: ")
 	println(myAcc)
 	
-	println("Updated Receiver's Account Number Details: ")
+	println("Receiver's Account Number Details: ")
 	println(acc)
+	
 	
 } 
 
-class account(id:String,n:Int,b:Double){
+class Account(id:String,n:Int,b:Double){
 
-	def nic:string = id
-	def accNum:Int = n
-	def accBal:Double = b
+	val nic:String = id
+	val accNum:Int = n
+	var balance:Double = b
 	
-	override def toString = "[ " +nic+" : "+ accNum +" : " + accBal+" ]" //println
+	override def toString = "[ " +nic+" : "+ accNum +" : " + balance+" ]" //println
 	
-	def transfer(c:Double)={
-		require(this.accNum>=c,"Account balance is insufficient to transtraction")
+	def withdraw(a:Double) = this.balance = this.balance - a
+	
+	def deposit(a:Double) = this.balance = this.balance + a
+	
+	
+	def transfer(a:Account,c:Double)={
 		
-		myAcc.accNum = myAcc.accNum-c
-		acc.accNum = acc.accNum+c
+		this.withdraw(c)
+		a.deposit(c)
 		
-		println("Transaction successful")
+		println("\nTransaction successful. Transfered Amount: "+c)
+		
 	}
 		
 }
